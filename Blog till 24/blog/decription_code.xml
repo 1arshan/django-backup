@@ -1,0 +1,11 @@
+Blog :project
+blog :app
+Blogs,Blogs1 :class
+ all_blogs &all_blog1 : dictionary variable
+ blog_id :store id og each blog
+ any_name : name of the urls of detais function
+
+ models.py is not case sensitive
+
+ consider that we have made many app and there r funtion with same name in different app so which app will be call when we call the function 
+ so to deal with that ambiguity namespacing the url is done 

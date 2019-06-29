@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{%block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+  <h1>
+        Hello,Welcome to bLOGGER:
+    </h1>
+ 
+    <h2>
+        Blogs:
+    </h2>
+    <h3>
+        <ol>        {%for x in all_blogs%}
+         <li> <a href ="{%url 'blog:any_name' x.id%}">{{x.author}}:   {{x.blog_content}}</a></li>
+        
+            
+        {%endfor%}    
+        </ol>
+
+    </h3>
+    {%endblock%}
+</body>
+</html>

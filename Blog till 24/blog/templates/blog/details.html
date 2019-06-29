@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+<body><p></p>
+        {%if error_message%}
+        <p><strong> {{error_message}}</strong> </p>
+                {%endif%}
+        <form
+                action ="/blog/{{blog_id1}}/favorite/"  method ="post">
+               
+                {%csrf_token%}
+                {%for x in all_blog1.blogs1_set.all%} 
+                <input type ="radio" id ="x{{forloop.counter}}"
+                name ="x" value ="{{x.id}}">
+        <label for ="x{{forloop.counter}}"> {{x.blog_content}}
+                {%if x.is_favorite%}
+                        <img src ="http://imgur.com/b9b13Rd.png" />
+                {%endif%}
+        </label><br>
+        {%endfor%}
+        
+        <input type ="submit" value ="favorite">
+         
+        </form>        
+</body>
+</html>

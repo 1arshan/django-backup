@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+<body>
+        <h1>Blog By: {{all_blog1.author}}</h1>
+        <p>created at:{{all_blog1.created_at}},,,edited at:{{all_blog1.edited_at}}</p>
+ <h2>Blogs:</h2><br>
+ <p> <ul>{%for x in all_blog1.blogs1_set.all%}
+                <li>{{x.blog_content}}</li>
+         {%endfor%}
+          
+        
+          </ul>
+          </p>
+</body>
+</html>
